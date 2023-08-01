@@ -1,4 +1,4 @@
-import { Movie } from "@/typinds"
+import { Movie } from "../typinds"
 import Image from 'next/image'
 
 interface Props {

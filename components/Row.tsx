@@ -1,4 +1,4 @@
-import { Movie } from "@/typinds"
+import { Movie } from "../typinds"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
 import Thumbnail from "./Thumbnail"
 import { useRef, useState } from "react"
