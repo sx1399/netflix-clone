@@ -1,5 +1,5 @@
-import { baseUrl } from "@/constants/movie"
-import { Movie } from "@/typinds"
+import { baseUrl } from "../constants/movie"
+import { Movie } from "../typinds"
 import { InformationCircleIcon } from "@heroicons/react/solid"
 import Image from "next/image"
 import { useEffect, useState } from "react"
