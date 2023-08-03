@@ -7,6 +7,7 @@ import Row from '../components/Row'
 import useAuth from '../hooks/useAuth'
 import { useRecoilValue } from 'recoil'
 import { modalState } from '../atoms/modalAtom'
+import Modal from '../components/Modal'
 
 interface Props {
   netflixOriginals: Movie[]
@@ -54,7 +55,7 @@ const Home = ({ netflixOriginals,
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
-      {/* Modal */}
+      {showModal && <Modal />}
     </div>
   )
 }
