@@ -1,4 +1,3 @@
-import { getProducts, Product } from '@stripe/firestore-stripe-payments'
 import Head from 'next/head'
 import { useRecoilValue } from 'recoil'
 import { modalState, movieState } from '../atoms/modalAtom'
@@ -13,6 +12,7 @@ import useSubscription from '../hooks/useSubscription'
 import payments from '../lib/stripe'
 import { Movie } from '../typings'
 import requests from '../utils/requests'
+import { getProducts, Product } from '@stripe/firestore-stripe-payments'
 
 interface Props {
   netflixOriginals: Movie[]
@@ -49,8 +49,9 @@ const Home = ({
 
   return (
     <div
-      className={`relative h-screen bg-gradient-to-b lg:h-[140vh] ${showModal && '!h-screen overflow-hidden'
-        }`}
+      className={`relative h-screen bg-gradient-to-b lg:h-[140vh] ${
+        showModal && '!h-screen overflow-hidden'
+      }`}
     >
       <Head>
         <title>Home - Netflix</title>
@@ -70,7 +71,7 @@ const Home = ({
           <Row title="Scary Movies" movies={horrorMovies} />
           <Row title="Romance Movies" movies={romanceMovies} />
           <Row title="Documentaries" movies={documentaries} />
-        </section>
+        </section> 
       </main>
       {showModal && <Modal />}
     </div>
@@ -82,7 +83,7 @@ export default Home
 export const getServerSideProps = async () => {
   const products = await getProducts(payments, {
     includePrices: true,
-    activeOnly: true,
+    activeOnly: true
   })
     .then((res) => res)
     .catch((error) => console.log(error.message))
