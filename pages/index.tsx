@@ -80,7 +80,7 @@ const Home = ({
 
 export default Home
 
-export const getServerSideProps = async () => {
+export async function generateStaticParams() {
   const products = await getProducts(payments, {
     includePrices: true,
     activeOnly: true

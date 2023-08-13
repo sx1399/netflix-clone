@@ -13,7 +13,7 @@ interface Props {
   products: Product[]
 }
 
-function Plans({ products }: Props) {
+function Plans({ products = [] }: Props) {
   const { logout, user } = useAuth()
   const [selectedPlan, setSelectedPlan] = useState<Product | null>(products[2])
   const [isBillingLoading, setBillingLoading] = useState(false)
